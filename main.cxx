@@ -13,13 +13,15 @@ using namespace std;
 int main(){
 
     Comandos<string> comando{};
+    comando.iniciar_mapa();
     char tmp[256],aux[100];
     getcwd(tmp, 256);
     cout << tmp << " $ ";
-    cin >> aux;
+    cin.getline(aux,100);
     comando.setEntrada(aux);
+    comando.procesamiento();
 
-    cout << comando.getEntrada();
+
 
 
 
