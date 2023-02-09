@@ -7,6 +7,9 @@
 #include <iostream>
 #include <string.h>
 #include <map>
+#include <fstream>
+#include <algorithm>
+#include <ranges>
 
 using namespace std;
 
@@ -109,18 +112,68 @@ public:
     }
 
 
-    T cargar_comandos(){};
-    T cargar_elementos(){};
-    T agregar_movimiento(){};
-    T agregar_analisis(){};
-    T agregar_elemento(){};
-    T guardar(){};
-    T simular_comandos(){};
-    T salir(){};
-    T ubicar_elementos(){};
-    T en_cuadrante(){};
-    T crear_mapa(){};
-    T ruta_mas_larga(){};
+    T cargar_comandos(){
+        if(parametros[0].length()==0){
+            cout << "No hay parametros validos" << endl;
+            return 20;
+        }
+        ifstream comandos;
+        comandos.open(parametros[0], ios::in);
+        if(comandos.fail())
+        {
+            cout << parametros[0] << " no se encuentra o no puede leerse." <<  endl;
+            return 10;
+        }
+        else
+        {
+            int n;
+            //PENDIENTE
+            cout << n << " comandos cargados correctamente desde " << parametros[0] << endl;
+        }
+    }
+    T cargar_elementos(){
+        if(parametros[0].length()==0){
+            cout << "No hay parametros validos" << endl;
+            return 20;
+        }
+        ifstream comandos;
+        comandos.open(parametros[0], ios::in);
+        if(comandos.fail())
+        {
+            cout << parametros[0] << " no se encuentra o no puede leerse." <<  endl;
+            return 10;
+        }
+        else
+        {
+            int n;
+            //PENDIENTE
+            cout << n << " elementos cargados correctamente desde " << parametros[0] << endl;
+        }
+    }
+
+    T agregar_movimiento(){
+        if(parametros[3].length()!=0)
+        {
+            cout << "Ha ingresado mas parametros de los requeridos. " << endl;
+            return 10;
+        }
+        if(parametros[0] != "avanzar" || parametros[0] != "girar" )
+        {
+            cout << "La información del movimiento no corresponde a los datos esperados (tipo, magnitud, unidad)." << endl;
+            return 10;
+        }
+        cout << "El comando de movimiento ha sido agregado exitosamente.";
+
+    }
+    T agregar_analisis(){}
+    T agregar_elemento(){}
+    T guardar(){}
+    T simular_comandos(){}
+    T salir(){}
+    T ubicar_elementos(){}
+    T en_cuadrante(){}
+    T crear_mapa(){}
+    T ruta_mas_larga(){}
 };
 
 
