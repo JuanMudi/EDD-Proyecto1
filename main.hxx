@@ -14,10 +14,18 @@ template<class T>
 class Comandos{
 private:
     map<string,int> switchmap;
-    char *entrada;
-    string parametros[5];
-    char *comando,*ax;
+    char entrada[100];
+    string parametros[10];
+    char comando[20];
 public:
+    const char *getEntrada() const {
+        return entrada;
+    }
+    void setEntrada(char ent[100] ){
+        strcpy(entrada,ent);
+
+    }
+
     void iniciar_mapa()
     {
         switchmap["cargar_comandos"] = 1;
@@ -35,69 +43,62 @@ public:
     }
     void procesamiento()
     {
-        ax = strtok(entrada, " ");
-        comando = ax;
+        //Determinar el comando
         int i=0;
-        while(ax!=nullptr)
-        {
-            cout << "Accacac: " << endl;
-            ax = strtok(nullptr , " ");
-            cout << "ax: " << ax << endl;
-
-            parametros[i] = ax;
-            cout << parametros[i];
+        while(entrada[i] != ' '){
+            comando[i] = entrada[i];
             i++;
         }
-        cout << "Llego aca" << endl;
-
-        switch (switchmap.find(std::string(comando))->second) {
+        //Determinar los parametros
+        cout << "strtok: " << strtok(entrada, " ") << endl;
+        int x=0;
+        char *token;
+        while(true) {
+            token = strtok(NULL, " ");
+            if(token == NULL)
+                break;
+            parametros[x] = token;
+            x++;
+        }
+               switch (switchmap.find(std::string(comando))->second) {
             case 1:
                 cargar_comandos();
-                cout << "Entro 1" << endl;
                 break;
             case 2:
                 cargar_elementos();
-                cout << "Entro 2" << endl;
                 break;
             case 3:
                 agregar_movimiento();
-                cout << "Entro 1" << endl;
                 break;
             case 4:
                 agregar_analisis();
-                cout << "Entro 1" << endl;
                 break;
             case 5:
                 agregar_elemento();
-                cout << "Entro 1" << endl;
                 break;
             case 6:
                 guardar();
-                cout << "Entro 1" << endl;
                 break;
             case 7:
                 simular_comandos();
-                cout << "Entro 1" << endl;
                 break;
             case 8:
                 salir();
-                cout << "Entro 1" << endl;
                 break;
             case 9:
                 ubicar_elementos();
-                cout << "Entro 1" << endl;
                 break;
             case 10:
                 en_cuadrante();
-                cout << "Entro 1" << endl;
                 break;
             case 11:
                 crear_mapa();
-                cout << "Entro 1" << endl;
                 break;
             case 12:
                 ruta_mas_larga();
-                cout << "Entro 1" << endl;
+                break;
+            default:
+                cout << "No entro ningun caso " << endl;
                 break;
 
 
@@ -106,13 +107,7 @@ public:
         }
 
     }
-    char *getEntrada() const {
-        return entrada;
-    }
 
-    void setEntrada(char *entrada) {
-        Comandos::entrada = entrada;
-    }
 
     T cargar_comandos(){};
     T cargar_elementos(){};

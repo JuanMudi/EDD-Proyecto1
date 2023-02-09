@@ -12,7 +12,7 @@ using namespace std;
 
 int main(){
 
-    Comandos<string> comando{};
+    Comandos<void> comando{};
     comando.iniciar_mapa();
     char tmp[256],aux[100];
     getcwd(tmp, 256);
