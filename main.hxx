@@ -118,6 +118,7 @@ public:
             return 20;
         }
         ifstream comandos;
+        cout << parametros[0] << endl;
         comandos.open(parametros[0], ios::in);
         if(comandos.fail())
         {
@@ -165,12 +166,46 @@ public:
         cout << "El comando de movimiento ha sido agregado exitosamente.";
 
     }
-    T agregar_analisis(){}
-    T agregar_elemento(){}
-    T guardar(){}
+    T agregar_analisis(){
+        if(parametros[3].length()!=0)
+        {
+            cout << "Ha ingresado mas parametros de los requeridos. " << endl;
+            return 10;
+        }
+        if(parametros[0] != "fotografiar" || parametros[0] != "composicion" || parametros[0] != "perforar" )
+        {
+            cout << "La información del movimiento no corresponde a los datos esperados (tipo, magnitud, unidad)." << endl;
+            return 10;
+        }
+        cout << "El comando de movimiento ha sido agregado exitosamente.";
+
+        }
+    T agregar_elemento(){
+        if(parametros[3].length()!=0)
+        {
+            cout << "Ha ingresado mas parametros de los requeridos. " << endl;
+            return 10;
+        }
+        if(parametros[0] != "roca" || parametros[0] != "crater" || parametros[0] != "monticulo" || parametros[0] != "duna" )
+        {
+            cout << "La información del movimiento no corresponde a los datos esperados (tipo, magnitud, unidad)." << endl;
+            return 10;
+        }
+        cout << "El comando de movimiento ha sido agregado exitosamente.";
+    }
+    T guardar(){
+
+    }
     T simular_comandos(){}
-    T salir(){}
-    T ubicar_elementos(){}
+    T salir(){
+
+        exit(10);
+    }
+
+    T ubicar_elementos(){
+        cout << "La información requerida no está almacenada en memoria." << endl;
+
+    }
     T en_cuadrante(){}
     T crear_mapa(){}
     T ruta_mas_larga(){}
