@@ -1,0 +1,18 @@
+**Comandos de desplazamiento**
+//tipo_movimiento magnitud unidad_medida
+1. avanzar 
+2. girar 
+**Comandos de análisis**
+//tipo_analisis objeto comentario
+1. fotografiar
+2. composicion
+3. perforar
+**Información de puntos de interés**
+// tipo_elemento tamaño unidad_medida coordenada_x coordenada_y
+1. roca
+2. crater
+3. monticulo
+4. duna
+
+**COMPONENTE 1**
+
