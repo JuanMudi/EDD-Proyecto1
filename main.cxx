@@ -16,10 +16,12 @@ int main(){
     comando.iniciar_mapa();
     char tmp[256],aux[100];
     getcwd(tmp, 256);
-    cout << tmp << " $ ";
-    cin.getline(aux,100);
-    comando.setEntrada(aux);
-    comando.procesamiento();
+    while(true) {
+        cout << " $ ";
+        cin.getline(aux, 100);
+        comando.setEntrada(aux);
+        comando.procesamiento();
+    }
 
 
 

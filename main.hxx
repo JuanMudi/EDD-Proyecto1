@@ -53,7 +53,7 @@ public:
             i++;
         }
         //Determinar los parametros
-        cout << "strtok: " << strtok(entrada, " ") << endl;
+        strtok(entrada, " ");
         int x=0;
         char *token;
         while(true) {
@@ -118,7 +118,6 @@ public:
             return 20;
         }
         ifstream comandos;
-        cout << parametros[0] << endl;
         comandos.open(parametros[0], ios::in);
         if(comandos.fail())
         {
@@ -198,7 +197,6 @@ public:
     }
     T simular_comandos(){}
     T salir(){
-
         exit(10);
     }
 
