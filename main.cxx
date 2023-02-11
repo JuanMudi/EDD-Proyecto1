@@ -3,22 +3,21 @@
 //
 
 #include "main.hxx"
-//#include "Proyecto1.hxx"
 #include <iostream>
 #include <filesystem>
 #include <unistd.h>
 #include <string>
+
 using namespace std;
 
 int main(){
 
-    Comandos<int> comando{};
+    Comandos comando{};
     comando.iniciar_mapa();
-    char tmp[256],aux[100];
-    getcwd(tmp, 256);
-    while(true) {
-        cout << " \n$ ";
-        cin.getline(aux, 100);
+    char aux[100];
+        while(true) {
+        std::cout << " \n$ ";
+        std::cin.getline(aux, 100);
         comando.setEntrada(aux);
         comando.procesamiento();
     }

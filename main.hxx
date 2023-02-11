@@ -13,7 +13,6 @@
 
 using namespace std;
 
-template<class T>
 class Comandos{
 private:
     map<string,int> switchmap;
@@ -120,7 +119,7 @@ public:
     }
 
 
-    T cargar_comandos(){
+    int cargar_comandos(){
 
         cout << "El comando existe" << endl;
         if(parametros[0].length()==0){
@@ -140,8 +139,9 @@ public:
             //PENDIENTE
             cout << n << " comandos cargados correctamente desde " << parametros[0] << endl;
         }
+        return 0;
     }
-    T cargar_elementos(){
+    int cargar_elementos(){
         cout << "El comando existe" << endl;
         if(parametros[0].length()==0){
             cout << "No hay parametros validos" << endl;
@@ -160,9 +160,10 @@ public:
             //PENDIENTE
             cout << n << " elementos cargados correctamente desde " << parametros[0] << endl;
         }
+        return 0;
     }
 
-    T agregar_movimiento(){
+    int agregar_movimiento(){
         if(parametros[0].length()==0){
             cout << "No hay parametros validos" << endl;
             return 20;
@@ -179,9 +180,9 @@ public:
             return 10;
         }
         cout << "El comando de movimiento ha sido agregado exitosamente.";
-
+        return 0;
     }
-    T agregar_analisis(){
+    int agregar_analisis(){
         if(parametros[0].length()==0){
             cout << "No hay parametros validos" << endl;
             return 20;
@@ -199,9 +200,9 @@ public:
             return 10;
         }
         cout << "El comando de movimiento ha sido agregado exitosamente.";
-
+        return 0;
         }
-    T agregar_elemento(){
+    int agregar_elemento(){
         if(parametros[0].length()==0){
             cout << "No hay parametros validos" << endl;
             return 20;
@@ -218,45 +219,53 @@ public:
             return 10;
         }
         cout << "El comando de movimiento ha sido agregado exitosamente.";
+        return 0;
     }
-    T guardar(){
+    int guardar(){
         cout << "El comando existe" << endl;
+        return 0;
     }
-    T simular_comandos(){
+    int simular_comandos(){
         if(parametros[0].length()==0){
             cout << "No hay parametros validos" << endl;
             return 20;
         }
         cout << "El comando existe" << endl;
+        return 0;
     }
-    T salir(){
+    int salir(){
         cout << "El comando existe" << endl;
         exit(10);
+        return 0;
     }
 
-    T ubicar_elementos(){
+    int ubicar_elementos(){
         cout << "El comando existe" << endl;
         cout << "La información requerida no está almacenada en memoria." << endl;
+        return 0;
 
     }
-    T en_cuadrante(){
+    int en_cuadrante(){
         if(parametros[0].length()==0 || parametros[1].length()==0 || parametros[2].length()==0 || parametros[3].length()==0){
             cout << "No hay parametros validos" << endl;
             return 20;
         }
         cout << "El comando existe" << endl;
+        return 0;
     }
-    T crear_mapa(){
+    int crear_mapa(){
         if(parametros[0].length()==0 || parametros[1].length()==0 || parametros[2].length()==0 || parametros[3].length()==0){
             cout << "No hay parametros validos" << endl;
             return 20;
         }
         cout << "El comando existe" << endl;
+        return 0;
     }
-    T ruta_mas_larga(){
+    int ruta_mas_larga(){
         cout << "El comando existe" << endl;
+        return 0;
     }
-    T ayuda() {
+    int ayuda() {
         if (parametros[0].length() == 0) {
             cout << "LISTA DE COMANDOS EXISTENTES " << endl;
             cout << "1. cargar_comandos nombre_archivo" << endl;
@@ -314,7 +323,8 @@ public:
                         "este valor con la convención que se usó para su medición (centimetros, metros, ...). Finalmente, las\n"
                         "coordenadas x y y corresponden a números reales que permiten conocer la ubicación del elemento en\n"
                         "el sistema de coordenadas del suelo marciano utilizado por el vehículo. Si no se envía la información\n"
-                        "completa y adecuada del elemento, éste no puede agregarse a la lista de puntos de interés que se enviarán\n"
+           
+                 "completa y adecuada del elemento, éste no puede agregarse a la lista de puntos de interés que se enviarán\n"
                         "al robot desde la tierra.";
                 break;
             case 6:
@@ -356,6 +366,7 @@ public:
 
 
         }
+        return 0;
     }
 };
 
