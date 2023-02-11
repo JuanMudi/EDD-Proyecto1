@@ -17,7 +17,7 @@ int main(){
     char tmp[256],aux[100];
     getcwd(tmp, 256);
     while(true) {
-        cout << " $ ";
+        cout << " \n$ ";
         cin.getline(aux, 100);
         comando.setEntrada(aux);
         comando.procesamiento();
